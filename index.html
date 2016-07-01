@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emotion Detection</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
+     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+    <!-- Magic animations (New CSS technology!)-->
+    <link rel="stylesheet" href="assets/css/magic.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Intro</h1>
+                        <p class="intro-text">Response emotion text sensing
+                            <br>Created by an awesome group EAJ</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- Heading information here  -->
+<h1> H1 header </h1>
+
+
+
+<!-- Display gifs/images here -->
+<div class = "gif"> 
+</div>
+
+<!-- graphs here -->
+
+<div id = "graph">
+</div>
+
+<!-- more information goes here?  -->
+<li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+<h1> text goes here! </h1>
+
+<!-- Display gifs/images here -->
+
+<div class = "gif"> 
+
+</div>
+
+
+<!-- Selectors go here (use a dropdown to select up to 3) -->
+<li class="dropdown open">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                    Dropdown <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+                  </ul>
+                </li>
+
+
+<!-- graphs here? -->
+
+<div id = "graph">
+</div>
+
+<!-- more information goes here?  -->
+
+<!-- User types in their name and other inputs here -->
+<div class="col-lg-6">
+  <div class="well bs-component">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>legend</legend>
+        <!-- Selectors go here (use a dropdown to select up to 3) -->
+        <div class="form-group"></div>
+       <!-- ::before -->
+        <label for="userName" class="col-lg-2 control-label">Name</label>
+        <div class='col-lg-10'>
+            <input type="text" class="form-control" id="inputName" placeholder="Name">
+        </div>
+       <!-- ::after-->
+        <div class="form-group">
+          <label for="textArea" class="col-lg-2 control-label">Text Area</label>
+            <div class="col-lg-10">
+              <textarea class="form-control" rows="3" id="textArea" placeholder="Start typing here!">
+              </textarea>
+                <span class="help-block">More to come soon</span>
+             </div>
+        </div>
+         <button type="submit" class="btn btn-primary" id = "submitbtn" >Submit</button>
+      </fieldset>
+    </form>
+  </div>
+  <button type="submit" class="btn btn-success" id = "analyzeMore" >Analyze More</button>
+</div>
+
+<div class="footer">
+Project by Andrew, Ethan and Jamar
+</div>
+<!-- Insert chartjs.org here -->
+</div>
+
+<!-- submit button  -->
+<div>
+<button type="submit" col-xs-4="row" class="btn btn-success" id = "searchBtn">Submit 
+</button>
+</div>
+
+<!-- bottom page closer here -->
+
+
+<!-- script tags go here -->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+$(document).ready(function() {
+
+   // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDqMFDq_ks9w-7WoZT38l2ujKZyfwvMwL4",
+    authDomain: "group-project-1-4da50.firebaseapp.com",
+    databaseURL: "https://group-project-1-4da50.firebaseio.com",
+    storageBucket: "group-project-1-4da50.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+ // $('.gif').hover(function () {
+ // $(this).addClass('magictime twisterInup');
+
+
+
+  $('#dropdown').on('show.bs.dropdown',function(){
+  // do something…
+})
+  
+});
+</script>
+</body>
+</html>
