@@ -2,12 +2,16 @@
 <html>
 <head>
   <title>Emotion Detection</title>
-    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+   <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script> 
+
+     
     <!-- Magic animations (New CSS technology!)-->
     <link rel="stylesheet" href="assets/css/magic.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -32,33 +36,43 @@
         </div>
     </header>
 <!-- Heading information here  -->
-<h1> H1 header </h1>
+<h1 class="text-center"> Text manipulation! </h1>
 
-
+<!-- Container -->
+<div class="container">
 
 <!-- Display gifs/images here -->
-<div class = "gif"> 
+<div class="row">
+ <div class="col-md-12" id="gifDisplay">
+      gifs go here
+  </div>
 </div>
 
-<!-- graphs here -->
+<div class="row">
+  <div class="col-md-6" id="images">
+      image goes here
+  </div>
 
-<div id = "graph">
+  <!-- graphs here -->
+  <div class="col-md-6" id="graph">
+      graph goes here
+      </div>
 </div>
+
+<!-- drop down menu -->
+
+
+
 
 <!-- more information goes here?  -->
-<li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-<h1> text goes here! </h1>
-
-<!-- Display gifs/images here -->
-
-<div class = "gif"> 
-
-</div>
 
 
-<!-- Selectors go here (use a dropdown to select up to 3) -->
-<li class="dropdown open">
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+
+
+<!-- Selectors go here (use a dropdown to select up to 3) 
+<span class="dropdown open">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
                     Dropdown <span class="caret"></span>
                   </a>
@@ -67,13 +81,7 @@
                     <li class="divider"></li>
                     <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
                   </ul>
-                </li>
-
-
-<!-- graphs here? -->
-
-<div id = "graph">
-</div>
+                </span> -->
 
 <!-- more information goes here?  -->
 
@@ -82,7 +90,21 @@
   <div class="well bs-component">
     <form class="form-horizontal">
       <fieldset>
-        <legend>legend</legend>
+      <!--  <legend>legend</legend> --> 
+  
+          <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Dropdown
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+</div>
         <!-- Selectors go here (use a dropdown to select up to 3) -->
         <div class="form-group"></div>
        <!-- ::before -->
@@ -104,26 +126,24 @@
     </form>
   </div>
   <button type="submit" class="btn btn-success" id = "analyzeMore" >Analyze More</button>
+
+  </div>
+
 </div>
 
 <div class="footer">
 Project by Andrew, Ethan and Jamar
 </div>
 <!-- Insert chartjs.org here -->
-</div>
-
-<!-- submit button 
-<div>
-<button type="submit" col-xs-4="row" class="btn btn-success" id = "searchBtn">Submit 
-</button>
-</div>
- -->
 
 
 <!-- bottom page closer here -->
 
 
 <!-- script tags go here -->
+<!-- <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>-->
+
+
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
 <script>
 $(document).ready(function() {
@@ -140,11 +160,23 @@ $(document).ready(function() {
  // $('.gif').hover(function () {
  // $(this).addClass('magictime twisterInup');
 
+  //$(".dropdown").attr("data-toggle", "dropdown");
 
+  //$('.dropdown-toggle').dropdown()
+  /*$('#clickMe').on('click', function() {
+        // Trigger an alert.
+        alert("I've been clicked!");
+    });*/
+  
 
-  $('#dropdown').on('show.bs.dropdown',function(){
+  //$('.dropdown').on('show.bs.dropdown', function () {
   // do something…
-})
+//})
+
+
+  $('.dropdown').hover(function(){ 
+  $('.dropdown-toggle', this).trigger('click'); 
+});
   
 });
 </script>

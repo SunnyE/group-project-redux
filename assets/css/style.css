@@ -10,18 +10,15 @@
   display: table;
   width: 100%;
   height: auto;
-  padding: 100px 0;
+  padding: 30px 0;
   text-align: center;
   color: white;
-
  /* background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;*/
-
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-
 }
 
 .footer {
@@ -35,3 +32,26 @@
   text-align: center;
   font: 4px;
 }
+
+.gifDisplay{
+      float:left;
+      margin: 0px;
+      width: 210px;
+}
+
+.gifImage{
+      border: solid black 1px;
+      width: 120%;
+      height: 120%;
+      padding: 5px;
+      max-height: 220px;
+      max-width: 200px;
+      background-color: lightgrey;
+    }
+
+.gif{
+      font-size: 12px;
+      border: .25px;
+      background-color: white;
+      color: lightgray;
+    }
