@@ -33,11 +33,7 @@
   font: 4px;
 }
 
-.gifDisplay{
-      float:left;
-      margin: 0px;
-      width: 210px;
-}
+
 
 .gifImage{
       border: solid black 1px;
@@ -49,9 +45,26 @@
       background-color: lightgrey;
     }
 
-.gif{
+#gif{
       font-size: 12px;
       border: .25px;
       background-color: white;
       color: lightgray;
+      border: solid black 1px;
     }
+
+#gifDisplay {
+ float:left;
+      margin: 0px;
+      width: 210px;
+}
+#images{
+border: solid black 1px;
+}
+
+#graph{
+  border: solid black 1px;
+
+
+}
+
