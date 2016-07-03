@@ -62,16 +62,17 @@ body {
     }
 
 #gifDisplay {
- float:left;
-      margin: 0px;
+      float:left;
+      margin-bottom: 10px;
       width: 210px;
+      border: solid black 1px;
 }
 #images{
 border: solid black 1px;
-position: center;
 }
 
 #graph{
+  
   border: solid black 1px;
 
 }
