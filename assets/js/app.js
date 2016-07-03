@@ -10,6 +10,11 @@
   $('.gif').hover(function () {
   $(this).addClass('magictime twisterInup');
 });
+
+  $('#images').hover(function () {
+  $(this).addClass('magictime puffIn');
+});
+
   $.ajax({
     url: 'https://shl-mp.p.mashape.com/webresources/jammin/emotionV2', // The URL to the API. You can get this in the API page of the API you intend to consume
     type: 'POST', // The HTTP Method, can be GET POST PUT DELETE etc
