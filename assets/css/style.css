@@ -5,6 +5,12 @@
 
 }
 */
+body {
+    background-image: url("dustGray.jpg");
+    height: 50%;
+   /* background-color: #cccccc;*/
+}
+
 
 .intro {
   display: table;

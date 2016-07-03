@@ -42,30 +42,24 @@
 <div class="container">
 
 <!-- Display gifs/images here -->
-<div class="row">
- <div class="col-md-12" id="gifDisplay">
-      gifs go here
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6" id="images">
-      image goes here
+    <div class="row">
+          <div class="col-md-12" id="gifDisplay">
+              gifs go here
+        </div>
   </div>
 
-  <!-- graphs here -->
-  <div class="col-md-6" id="graph">
-      graphs goes here
+  <div class="row">
+       <div class="col-md-6" id="images">
+            image goes here
+       </div>
+
+    <!-- graphs here -->
+      <div class="col-md-6" id="graph">
+            graphs goes here
       </div>
-</div>
-
-<!-- drop down menu -->
-
-
-
+  </div>
 
 <!-- more information goes here?  -->
-
 
 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
@@ -130,55 +124,13 @@
   </div>
 
 </div>
-
+<!-- bottom page closer here -->
 <div class="footer">
 Project by Andrew, Ethan and Jamar
 </div>
-<!-- Insert chartjs.org here -->
 
-
-<!-- bottom page closer here -->
-
-
-<!-- script tags go here -->
-<!-- <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>-->
-
-
+<script type= "text/javascript" src="assets/javascript/app.js"</script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
-<script>
-$(document).ready(function() {
 
-   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDqMFDq_ks9w-7WoZT38l2ujKZyfwvMwL4",
-    authDomain: "group-project-1-4da50.firebaseapp.com",
-    databaseURL: "https://group-project-1-4da50.firebaseio.com",
-    storageBucket: "group-project-1-4da50.appspot.com",
-  };
-  firebase.initializeApp(config);
-
- // $('.gif').hover(function () {
- // $(this).addClass('magictime twisterInup');
-
-  //$(".dropdown").attr("data-toggle", "dropdown");
-
-  //$('.dropdown-toggle').dropdown()
-  /*$('#clickMe').on('click', function() {
-        // Trigger an alert.
-        alert("I've been clicked!");
-    });*/
-  
-
-  //$('.dropdown').on('show.bs.dropdown', function () {
-  // do something…
-//})
-
-
-  $('.dropdown').hover(function(){ 
-  $('.dropdown-toggle', this).trigger('click'); 
-});
-  
-});
-</script>
 </body>
 </html>
