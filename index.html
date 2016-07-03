@@ -2,16 +2,11 @@
 <html>
 <head>
   <title>Emotion Detection</title>
-   <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script> 
-
-     
+   
     <!-- Magic animations (New CSS technology!)-->
     <link rel="stylesheet" href="assets/css/magic.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -25,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Response Emotion Text Sensing!</h1>
-                        <p class="intro-text">Group project
+                        <p class="intro-text">Group Project
                             <br>Created by an awesome group EAJ</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
@@ -36,7 +31,51 @@
         </div>
     </header>
 <!-- Heading information here  -->
-<h1 class="text-center"> Text manipulation! </h1>
+<div class="col-lg-3 col-md-6" id="mainpanel">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">0</div>
+                                    <div>New Graphs!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+ <div class="col-lg-3 col-md-6" id="mainpanel">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">0</div>
+                                    <div>New Graphs!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
 <!-- Container -->
 <div class="container">
@@ -44,24 +83,24 @@
 <!-- Display gifs/images here -->
     <div class="row">
           <div class="col-md-12" id="gifDisplay">
-              gifs go here
+              gifs populate here
         </div>
   </div>
 
   <div class="row">
        <div class="col-md-6" id="images">
-            image goes here
+          <img src="assets/images/Phones.png" class="img-rounded center-block" alt="phone2" width="180" height="180">
+            response image enters here?
        </div>
 
     <!-- graphs here -->
       <div class="col-md-6" id="graph">
-            graphs goes here
+            graphs populate here
       </div>
   </div>
 
 <!-- more information goes here?  -->
 
-<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
 
 
@@ -110,17 +149,16 @@
         <div class="form-group">
           <label for="textArea" class="col-lg-2 control-label">Text Area</label>
             <div class="col-lg-10">
-              <textarea class="form-control" rows="3" id="textArea" placeholder="Start typing here!">
+              <textarea class="form-control" rows="4" id="textArea" placeholder="Start typing here!">
               </textarea>
                 <span class="help-block">More to come soon</span>
              </div>
         </div>
          <button type="submit" class="btn btn-primary" id = "submitbtn" >Submit</button>
+         <button type="submit" class="btn btn-success" id = "analyzeMore" >Analyze More</button>
       </fieldset>
     </form>
   </div>
-  <button type="submit" class="btn btn-success" id = "analyzeMore" >Analyze More</button>
-
   </div>
 
 </div>
@@ -129,8 +167,17 @@
 Project by Andrew, Ethan and Jamar
 </div>
 
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 <script type= "text/javascript" src="assets/javascript/app.js"</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script> 
 
 </body>
+</html>
+
+
+
+
+
 </html>
