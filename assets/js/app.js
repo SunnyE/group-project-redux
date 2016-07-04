@@ -27,17 +27,44 @@ $(document).ready(function(){
     }
 });
 
+// this is for the gifs that populate to go here
+ // $(.gifImage).hover(function () {
+ // $(this).addClass('magictime twisterInup');
+// });
 
- $('.gif').hover(function () {
-  $(this).addClass('magictime twisterInup');
-});
+// the image that generates goes here. 
+  setTimeout(function(){
+    $('#phones').addClass('magictime puffIn');
+}, 100);
 
-  $('#images').hover(function () {
-  $(this).addClass('magictime puffIn');
-});
- 
-//$(document).on( 'click', '.nav-list li', function (e) {
- //   $(this).addClass('active').siblings().removeClass('active');
+
+  //$('#images').hover(function () {
+  //$(this).addClass('magictime puffIn');
 //});
 
+// CHANGE THIS TO THE GRAPHS THAT LOAD IN THE PAGE INSTEAD OF THE DIV ITSELF //
+// the image that generates goes here. 
+ // setTimeout(function(){
+   // $('.graphImage').addClass('magictime vanishIn');
+//}, 100);
+  $('#graph').hover(function () {
+  $(this).addClass('magictime swashIn');
+});
+
+// a load feature I can't get to work //
+ /*$('submit').click(function() {
+    var addLoadfeature= $('<div>');
+    addLoadfeature.addId('fountainG_1')
+    addLoadfeature.addId('fountainG_2')
+    addLoadfeature.addId('fountainG_3')
+    addLoadfeature.addId('fountainG_4')
+    addLoadfeature.addId('fountainG_5')
+    addLoadfeature.addId('fountainG_6')
+    addLoadfeature.addId('fountainG_7')
+    addLoadfeature.addClass('fountainG');
+  $('#fountainG').prepend(addLoadfeature);
+  console.log('#fountainG');
+    
+});*/
+ 
 });
