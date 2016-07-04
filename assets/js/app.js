@@ -1,4 +1,6 @@
+$(document).ready(function(){
 
+  
   var config = {
     apiKey: "AIzaSyDqMFDq_ks9w-7WoZT38l2ujKZyfwvMwL4",
     authDomain: "group-project-1-4da50.firebaseapp.com",
@@ -7,13 +9,6 @@
   };
   firebase.initializeApp(config);
 
-  $('.gif').hover(function () {
-  $(this).addClass('magictime twisterInup');
-});
-
-  $('#images').hover(function () {
-  $(this).addClass('magictime puffIn');
-});
 
   $.ajax({
     url: 'https://shl-mp.p.mashape.com/webresources/jammin/emotionV2', // The URL to the API. You can get this in the API page of the API you intend to consume
@@ -30,4 +25,22 @@
     xhr.setRequestHeader("X-Mashape-Key", "oLjs2Jn5P5mshFPhcnNjVDuwES30p1p0ZXujsnLNxRCXS6YdCO");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Enter here your Mashape key
     }
+});
+
+
+ $('.gif').hover(function () {
+  $(this).addClass('magictime twisterInup');
+});
+
+  $('#images').hover(function () {
+  $(this).addClass('magictime puffIn');
+});
+ $.each($('#navbar').find('li'), function() {
+        $(this).toggleClass('active', 
+            window.location.pathname.indexOf($(this).find('a').attr('href')) > -1);
+    }); 
+//$(document).on( 'click', '.nav-list li', function (e) {
+ //   $(this).addClass('active').siblings().removeClass('active');
+//});
+
 });
