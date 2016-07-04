@@ -35,10 +35,7 @@ $(document).ready(function(){
   $('#images').hover(function () {
   $(this).addClass('magictime puffIn');
 });
- $.each($('#navbar').find('li'), function() {
-        $(this).toggleClass('active', 
-            window.location.pathname.indexOf($(this).find('a').attr('href')) > -1);
-    }); 
+ 
 //$(document).on( 'click', '.nav-list li', function (e) {
  //   $(this).addClass('active').siblings().removeClass('active');
 //});
