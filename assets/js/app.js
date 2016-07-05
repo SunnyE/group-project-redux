@@ -1,11 +1,12 @@
 
-  var config = {
-    apiKey: "AIzaSyDqMFDq_ks9w-7WoZT38l2ujKZyfwvMwL4",
-    authDomain: "group-project-1-4da50.firebaseapp.com",
-    databaseURL: "https://group-project-1-4da50.firebaseio.com",
-    storageBucket: "group-project-1-4da50.appspot.com",
+    var config = {
+    apiKey: "AIzaSyBCRayuQL3qhkpb9vraVTz2KWlul4QVsdY",
+    authDomain: "group-project-redux.firebaseapp.com",
+    databaseURL: "https://group-project-redux.firebaseio.com",
+    storageBucket: "group-project-redux.appspot.com",
   };
-  firebase.initializeApp(config);
+    firebase.initializeApp(config);
+    var db = firebase.database();
 
   $('.gif').hover(function () {
   $(this).addClass('magictime twisterInup');
@@ -49,4 +50,29 @@ $.ajax({
     }
 });
 
-console.log("this is working");
+function pushUserTofireBase() {
+    
+    var user = {
+    name: $('#inputName').val(),
+    text: $('#textArea').val(),
+  }
+  db.ref().push({
+    userInfo: user,
+  })
+}
+
+ 
+
+$('#submitbtn').on('click', function(){ 
+  pushUserTofireBase();
+  
+
+})
+
+ db.ref().on("child_added", function(childSnapshot){
+    var snap = childSnapshot.val().userInfo;
+    console.log(childSnapshot.val().userInfo);
+    
+  });
+
+ 
