@@ -21,7 +21,7 @@ var sentScore = [];
 
 setTimeout(function(){
   $('#gifDisplay #graphDiv').addClass('magictime puffIn');
-} 100);
+}, 100);
 
   /*.ajax({
     url: 'https://shl-mp.p.mashape.com/webresources/jammin/emotionV2', // The URL to the API. You can get this in the API page of the API you intend to consume
