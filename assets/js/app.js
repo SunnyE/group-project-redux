@@ -18,7 +18,7 @@
   $(this).addClass('magictime puffIn');
 });
 
-  $.ajax({
+  /*.ajax({
     url: 'https://shl-mp.p.mashape.com/webresources/jammin/emotionV2', // The URL to the API. You can get this in the API page of the API you intend to consume
     type: 'POST', // The HTTP Method, can be GET POST PUT DELETE etc
     dataType: 'json',
@@ -50,7 +50,7 @@ $.ajax({
     xhr.setRequestHeader("X-Mashape-Key", "oLjs2Jn5P5mshFPhcnNjVDuwES30p1p0ZXujsnLNxRCXS6YdCO");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Enter here your Mashape key
     }
-});
+});*/
 
 function pushUserTofireBase() {
     
@@ -61,6 +61,16 @@ function pushUserTofireBase() {
   db.ref().push({
     userInfo: user,
   })
+}
+
+function flipToNegative(arr){
+  if(arr.sentiment === "negative"){
+    sent = arr.confidence *= -1;
+    sentScore.push(sent);
+  } else {
+    sentScore.push(arr.confidence);
+  }
+  makeChart(sentScore);
 }
 function getsent(arr) {
     $.ajax({
@@ -73,8 +83,9 @@ function getsent(arr) {
     }, // Additional parameters here
     success: function(data) {
     $("#testP").text(data.sentiment),
-    sentScore.push(data.confidence),
-    console.log(data) },
+    flipToNegative(data);
+    console.log(data),
+    console.log(sentScore)},
 
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
@@ -142,11 +153,18 @@ function getGif(arr) {
 } 
       
   } 
-  
-  
-    
-$(document).on('load', function(){
+     
+$(document).on('ready', function(){
   $('#gifDisplay').empty();
   $("#emotionPrint").empty();
 
 })
+function makeChart(arr) {
+var ctx = $("#myChart");
+var myLineChart = Chart.Line(ctx, {
+    data: arr,
+    options: options
+
+});
+  $('#graph').append(chartInstance);
+}
