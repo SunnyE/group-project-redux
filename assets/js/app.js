@@ -1,13 +1,14 @@
 
-    var config = {
-    apiKey: "AIzaSyBCRayuQL3qhkpb9vraVTz2KWlul4QVsdY",
-    authDomain: "group-project-redux.firebaseapp.com",
-    databaseURL: "https://group-project-redux.firebaseio.com",
-    storageBucket: "group-project-redux.appspot.com",
-  };
-    firebase.initializeApp(config);
-    var db = firebase.database();
-    var sentScore = [];
+var config = {
+apiKey: "AIzaSyBCRayuQL3qhkpb9vraVTz2KWlul4QVsdY",
+authDomain: "group-project-redux.firebaseapp.com",
+databaseURL: "https://group-project-redux.firebaseio.com",
+storageBucket: "group-project-redux.appspot.com",
+};
+
+firebase.initializeApp(config);
+var db = firebase.database();
+var sentScore = [];
     
 
   $('.gif').hover(function () {
@@ -17,6 +18,10 @@
   $('#images').hover(function () {
   $(this).addClass('magictime puffIn');
 });
+
+setTimeout(function(){
+  $('#gifDisplay #graphDiv').addClass('magictime puffIn');
+} 100);
 
   /*.ajax({
     url: 'https://shl-mp.p.mashape.com/webresources/jammin/emotionV2', // The URL to the API. You can get this in the API page of the API you intend to consume
