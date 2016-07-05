@@ -35,7 +35,7 @@
     }
 });
 
-$.ajax({
+/*$.ajax({
     url: "https://textanalysis-text-sentiment-v1.p.mashape.com/twitter-sentiment", // The URL to the API. You can get this in the API page of the API you intend to consume
     type: 'POST', // The HTTP Method, can be GET POST PUT DELETE etc
     dataType: 'json',
@@ -50,7 +50,7 @@ $.ajax({
     xhr.setRequestHeader("X-Mashape-Key", "oLjs2Jn5P5mshFPhcnNjVDuwES30p1p0ZXujsnLNxRCXS6YdCO");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Enter here your Mashape key
     }
-});
+});*/
 
 function pushUserTofireBase() {
     
