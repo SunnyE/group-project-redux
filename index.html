@@ -35,7 +35,7 @@
         </div>
     </header>
 <!-- Heading information here  -->
-<div class="col-lg-3 col-md-6" id="mainpanel">
+<!-- <div class="col-lg-3 col-md-6" id="mainpanel">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -79,7 +79,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div>  -->
 
 <!-- Container -->
 
@@ -141,13 +141,19 @@
         </div>
          <button type="submit" class="btn btn-primary" id = "submitbtn" >Submit</button>
          <button type="submit" class="btn btn-success" id = "analyzeMore" >Analyze More</button>
+         <button type="submit" class="btn btn-primary" id = "reset" >Reset</button>
       </fieldset>
     </form>
   </div>
   </div>
-  <div class="test"> 
+  <div class="test col-lg-5"> 
     <p id="testP"> </p>
+
+    <p> Underlying Emotions</p> 
     <div id="emotionPrint">
+
+    </div>
+    <div id="emotionPrint2">
 
     </div>
   </div>
@@ -156,19 +162,25 @@
 <!-- Display gifs/images here -->
     <div class="row">
           <div class="col-md-12" id="gifDisplay">
+              <div id="gifs1">
+
+              </div>
+              <div id="gifs2">
+                
+              </div>
               gifs populate here
         </div>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
        <div class="col-md-6" id="images">
           <img src="assets/images/Phones.png" class="img-rounded center-block" alt="phone2" width="180" height="180">
             response image enters here?
-       </div>
+       </div> -->
 
     <!-- graphs here -->
       <div class="col-md-6" id="graph">
-            graphs populate here
+            <p id="graph"> Graph of the sentiment of your texts </p>
             <canvas id="myChart" width="400" height="400"></canvas>
       </div>
   </div>

@@ -8,7 +8,7 @@
     firebase.initializeApp(config);
     var db = firebase.database();
     var sentScore = [];
-
+    
 
   $('.gif').hover(function () {
   $(this).addClass('magictime twisterInup');
@@ -94,6 +94,22 @@ function makeChart(arr) {
     var myLineChart = new Chart(ctx, {
       type: 'line',
         data: data,
+        options: {
+          scales: {
+            yAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Sentiment'
+              } 
+            }],
+            xAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Message Number'
+              } 
+            }]
+          }
+        }
     });
 }
 function flipToNegative(arr){
@@ -116,7 +132,7 @@ function getsent(arr) {
       "text": arr.text
     }, // Additional parameters here
     success: function(data) {
-    $("#testP").text(data.sentiment),
+    $("#testP").text("sentiment of text: " + data.sentiment),
     flipToNegative(data);
     console.log(data),
     console.log(sentScore)
@@ -132,9 +148,16 @@ function getsent(arr) {
   });
   }
 function printEmotions(arr){ 
-  
+  $("#emotionPrint").empty();
   for (var i=0; i<arr.emotions.length; i++) {
       $("#emotionPrint").append($('<p class="emotionP">').text(arr.emotions[i]).attr('value', arr.emotions[i]));
+  }
+
+}
+function printEmotions2(arr){ 
+  $("#emotionPrint2").empty();
+  for (var i=0; i<arr.emotions.length; i++) {
+      $("#emotionPrint2").append($('<p class="emotionP">').text(arr.emotions[i]).attr('value', arr.emotions[i]));
   }
 
 }
@@ -152,9 +175,9 @@ function getEmotions(arr){
     console.log(emotion),
     console.log(data),
     printEmotions(emotion[0]),
-    printEmotions(emotion[1]),
+    printEmotions2(emotion[1]),
     getGif(emotion[0]),
-    getGif(emotion[1])
+    getGif2(emotion[1])
   },
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
@@ -169,7 +192,7 @@ $('#submitbtn').on('click', function(){
 
 })
 
- db.ref().limitToLast(2).on("child_added", function(childSnapshot){
+ db.ref().limitToLast(5).on("child_added", function(childSnapshot){
     var snap = childSnapshot.val().userInfo;
     console.log(snap.text);
     getsent(snap);
@@ -179,24 +202,49 @@ $('#submitbtn').on('click', function(){
 
 
 function getGif(arr) {
+  $('#gifs1').empty();
   for (var i=0; i<arr.emotions.length; i++) {
       var word = arr.emotions[i];
       console.log(word);
-      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&rating=g&api_key=dc6zaTOxFJmzC";
-    $.ajax({url: queryURL, method: 'GET'})
+      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
+    $.ajax({url: queryURL, method: 'GET', async: false})
+
+     .done(function(response) {
+         console.log(response);
+
+          var div = $('<div class ="gifdiv">');
+          div.append($('<img class="gifs">').attr('src',response.data.images.original.url));
+          div.append(($('<p>').html(word)));
+         $('#gifs1').append(div);
+    }); 
+    
+} 
+}
+     
+function getGif2(arr) {
+  $('#gifs2').empty();
+  for (var i=0; i<arr.emotions.length; i++) {
+      var word = arr.emotions[i];
+      console.log(word);
+      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
+    $.ajax({url: queryURL, method: 'GET', async: false})
      .done(function(response) {
          console.log(response);
        var div = $('<div class ="gifdiv">');
       div.append($('<img class="gifs">').attr('src',response.data.images.original.url));
       div.append(($('<p>').html(word)));
-      $('#gifDisplay').append(div);
+      $('#gifs2').append(div);
     }); 
 } 
-      
+  
   } 
-     
 $(document).on('ready', function(){
-  $('#gifDisplay').empty();
+  
   $("#emotionPrint").empty();
+
+})
+$('#reset').on('click', function() {
+  db.remove();
+
 
 })
