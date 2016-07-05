@@ -211,7 +211,7 @@ function getGif(arr) {
   for (var i=0; i<arr.emotions.length; i++) {
       var word = arr.emotions[i];
       console.log(word);
-      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
+      var queryURL = "https://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
     $.ajax({url: queryURL, method: 'GET', async: false})
 
      .done(function(response) {
@@ -231,7 +231,7 @@ function getGif2(arr) {
   for (var i=0; i<arr.emotions.length; i++) {
       var word = arr.emotions[i];
       console.log(word);
-      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
+      var queryURL = "https://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
     $.ajax({url: queryURL, method: 'GET', async: false})
      .done(function(response) {
          console.log(response);
