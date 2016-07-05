@@ -92,3 +92,8 @@ border: solid black 1px;
   display:inline-block;
   margin-left: 10px;
 }
+
+.gifs {
+  display: inline-block;
+  width:200px;
+}
