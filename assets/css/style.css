@@ -88,3 +88,7 @@ border: solid black 1px;
   text-align: center;
   font: 4px;
 }
+.emotionP{
+  display:inline-block;
+  margin-left: 10px;
+}
