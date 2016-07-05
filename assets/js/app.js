@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 // this is for the gifs that populate to go here
  // $(.gifImage).hover(function () {
- // $(this).addClass('magictime twisterInup');
+ // $(this).addClass('magictime puffIn');
 // });
 
 // the image that generates goes here. 
@@ -45,11 +45,11 @@ $(document).ready(function(){
 // CHANGE THIS TO THE GRAPHS THAT LOAD IN THE PAGE INSTEAD OF THE DIV ITSELF //
 // the image that generates goes here. 
  // setTimeout(function(){
-   // $('.graphImage').addClass('magictime vanishIn');
+   // $('.graphImage').addClass('magictime puffIn');
 //}, 100);
-  $('#graph').hover(function () {
-  $(this).addClass('magictime swashIn');
-});
+  //$('#graph').hover(function () {
+  //$(this).addClass('magictime swashIn');
+//});
 
 // a load feature I can't get to work //
  /*$('submit').click(function() {
