@@ -21,7 +21,7 @@ var sentScore = [];
 
 setTimeout(function(){
   $('#gifDisplay #graphDiv').addClass('magictime puffIn');
-} 100);
+}, 100);
 
   /*.ajax({
     url: 'https://shl-mp.p.mashape.com/webresources/jammin/emotionV2', // The URL to the API. You can get this in the API page of the API you intend to consume
@@ -211,7 +211,7 @@ function getGif(arr) {
   for (var i=0; i<arr.emotions.length; i++) {
       var word = arr.emotions[i];
       console.log(word);
-      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
+      var queryURL = "https://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
     $.ajax({url: queryURL, method: 'GET', async: false})
 
      .done(function(response) {
@@ -231,7 +231,7 @@ function getGif2(arr) {
   for (var i=0; i<arr.emotions.length; i++) {
       var word = arr.emotions[i];
       console.log(word);
-      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
+      var queryURL = "https://api.giphy.com/v1/stickers/translate?s=" + word + "&api_key=dc6zaTOxFJmzC";
     $.ajax({url: queryURL, method: 'GET', async: false})
      .done(function(response) {
          console.log(response);
