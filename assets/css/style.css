@@ -64,8 +64,11 @@ body {
 #gifDisplay {
       float:left;
       margin-bottom: 10px;
-      width: 210px;
+      width: 90%;
       border: solid black 1px;
+}
+.gifdiv{
+  display:inline-block;
 }
 #images{
 border: solid black 1px;

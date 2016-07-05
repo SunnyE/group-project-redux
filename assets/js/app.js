@@ -62,7 +62,40 @@ function pushUserTofireBase() {
     userInfo: user,
   })
 }
+function makeChart(arr) {
 
+  var data = {
+        labels: ["1", "2", "3", "4", "5", "6", "7"],
+        datasets: [
+            {
+                label: "Message Plot",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: "rgba(75,192,192,0.4)",
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: arr,
+            }
+        ]
+    };
+    var ctx = $("#myChart");
+    var myLineChart = new Chart(ctx, {
+      type: 'line',
+        data: data,
+    });
+}
 function flipToNegative(arr){
   if(arr.sentiment === "negative"){
     sent = arr.confidence *= -1;
@@ -70,7 +103,8 @@ function flipToNegative(arr){
   } else {
     sentScore.push(arr.confidence);
   }
-  makeChart(sentScore);
+  console.log(sentScore);
+
 }
 function getsent(arr) {
     $.ajax({
@@ -85,7 +119,10 @@ function getsent(arr) {
     $("#testP").text(data.sentiment),
     flipToNegative(data);
     console.log(data),
-    console.log(sentScore)},
+    console.log(sentScore)
+
+    makeChart(sentScore)
+ },
 
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
@@ -132,7 +169,7 @@ $('#submitbtn').on('click', function(){
 
 })
 
- db.ref().on("child_added", function(childSnapshot){
+ db.ref().limitToLast(2).on("child_added", function(childSnapshot){
     var snap = childSnapshot.val().userInfo;
     console.log(snap.text);
     getsent(snap);
@@ -144,11 +181,15 @@ $('#submitbtn').on('click', function(){
 function getGif(arr) {
   for (var i=0; i<arr.emotions.length; i++) {
       var word = arr.emotions[i];
+      console.log(word);
       var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&rating=g&api_key=dc6zaTOxFJmzC";
     $.ajax({url: queryURL, method: 'GET'})
      .done(function(response) {
          console.log(response);
-      $('#gifDisplay').append($('<img class="gifs">').attr('src',response.data.images.original.url));
+       var div = $('<div class ="gifdiv">');
+      div.append($('<img class="gifs">').attr('src',response.data.images.original.url));
+      div.append(($('<p>').html(word)));
+      $('#gifDisplay').append(div);
     }); 
 } 
       
@@ -159,12 +200,3 @@ $(document).on('ready', function(){
   $("#emotionPrint").empty();
 
 })
-function makeChart(arr) {
-var ctx = $("#myChart");
-var myLineChart = Chart.Line(ctx, {
-    data: arr,
-    options: options
-
-});
-  $('#graph').append(chartInstance);
-}
