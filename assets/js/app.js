@@ -84,8 +84,9 @@ function getsent(arr) {
   });
   }
 function printEmotions(arr){ 
+  
   for (var i=0; i<arr.emotions.length; i++) {
-      $("#emotionPrint").append($('<p class="emotionP">').text(arr.emotions[i]));
+      $("#emotionPrint").append($('<p class="emotionP">').text(arr.emotions[i]).attr('value', arr.emotions[i]));
   }
 
 }
@@ -103,7 +104,10 @@ function getEmotions(arr){
     console.log(emotion),
     console.log(data),
     printEmotions(emotion[0]),
-    printEmotions(emotion[1])},
+    printEmotions(emotion[1]),
+    getGif(emotion[0]),
+    getGif(emotion[1])
+  },
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
     xhr.setRequestHeader("X-Mashape-Key", "oLjs2Jn5P5mshFPhcnNjVDuwES30p1p0ZXujsnLNxRCXS6YdCO");
@@ -126,3 +130,23 @@ $('#submitbtn').on('click', function(){
   });
 
 
+function getGif(arr) {
+  for (var i=0; i<arr.emotions.length; i++) {
+      var word = arr.emotions[i];
+      var queryURL = "http://api.giphy.com/v1/stickers/translate?s=" + word + "&rating=g&api_key=dc6zaTOxFJmzC";
+    $.ajax({url: queryURL, method: 'GET'})
+     .done(function(response) {
+         console.log(response);
+      $('#gifDisplay').append($('<img class="gifs">').attr('src',response.data.images.original.url));
+    }); 
+} 
+      
+  } 
+  
+  
+    
+$(document).on('load', function(){
+  $('#gifDisplay').empty();
+  $("#emotionPrint").empty();
+
+})
