@@ -1,14 +1,3 @@
-/*.clearfix:before,
-.clearfix:after,
-.btn {
-  margin-left: 20px;
-border-radius: 20px 20px 20px 20px;
--moz-border-radius: 20px 20px 20px 20px;
--webkit-border-radius: 20px 20px 20px 20px;
-border: 0px solid #000000;
-}
-*/
-
 html,body{
     height: 100%
 }
@@ -17,7 +6,7 @@ body {
     background-image: url("dustGray.jpg");
     height: 50%;
     padding-bottom: 30px
-   /* background-color: #cccccc;*/
+    background-color: #cccccc; 
 }
 
 
@@ -130,4 +119,8 @@ left:0;
     padding-top: 12px;
     padding-bottom: 12px;
   }
+}
+.emotionP{
+  display:inline-block;
+  margin-left: 10px;
 }
